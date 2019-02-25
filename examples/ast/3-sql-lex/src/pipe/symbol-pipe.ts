@@ -1,10 +1,5 @@
 class SymbolPipe implements Pipe {
-  getToken(
-    content: string,
-    line: number,
-    startPosition: number,
-    lastToken?: Token
-  ): Token {
+  getToken(content: string, lastToken?: Token): Token {
     return null;
   }
 }
