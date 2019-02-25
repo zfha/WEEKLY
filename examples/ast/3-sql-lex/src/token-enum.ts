@@ -1,5 +1,5 @@
 enum TokenEnum {
   ANNOTAION,
-  KEY,
+  KEYWORD,
   WHITEBLANK
 }
