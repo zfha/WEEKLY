@@ -1,4 +1,6 @@
 import { stringify } from 'querystring';
+import Token from '../token';
+import Pipe from './pipe';
 
 class KeywordPipe implements Pipe {
   static keywordStr =
@@ -11,9 +13,11 @@ class KeywordPipe implements Pipe {
     for (let keyword of this.keywords) {
       let matchs = content.match(new RegExp(keyword));
       if (matchs) {
-        return new Token(TokenEnum.KEYWORD, matchs[0]);
+        return new Token(TokenEnum.KEYWORD, matchs[0], keyword);
       }
     }
     return null;
   }
 }
+
+export default KeywordPipe;

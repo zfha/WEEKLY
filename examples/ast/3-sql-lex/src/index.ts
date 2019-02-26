@@ -1,15 +1,33 @@
-import * as fs from 'fs';
+import AnnotationPipe from './pipe/annotation-pipe';
+import BlankPipe from './pipe/blank-pipe';
+import KeywordPipe from './pipe/keyword-pipe';
+import SymbolPipe from './pipe/symbol-pipe';
+import Token from './token';
+import Pipe from './pipe/pipe';
+
 class Lex {
-  tokens: [Token];
+  tokens: Token[];
+  pipes: Pipe[] = [
+    new BlankPipe(),
+    new AnnotationPipe(),
+    new KeywordPipe(),
+    new SymbolPipe()
+  ];
 
   constructor() {}
 
-  parse(filePath: string) {
-    let content = fs.readFileSync(filePath, { encoding: 'utf-8' });
-    while (content) {
-      // let token =
-      //   this.getTokenWhiteBlank(content) || this.getTokenAnnotaion(content);
-      this.tokens.push(token);
+  parse(sql: string) {
+    let lastToken;
+    while (sql) {
+      let token;
+      for (let pipe of this.pipes) {
+        token = pipe.getToken(sql, lastToken);
+        if (token) {
+          this.tokens.push(token);
+          lastToken = token;
+          break;
+        }
+      }
     }
   }
 }
