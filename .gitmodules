@@ -1,0 +1,3 @@
+[submodule "examples/ast/3-sql-lex"]
+	path = examples/ast/3-sql-lex
+	url = git@github.com:zfha/sql-parser.git
