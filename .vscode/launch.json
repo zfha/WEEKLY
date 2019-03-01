@@ -8,8 +8,19 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/examples/ast/1-hook-console-log/demo.js",
-      "outFiles": ["${workspaceFolder}/**/*.js"]
+      "program": "${workspaceRoot}/examples/ast/3-sql-lex/src/index.ts",
+      "outFiles": ["${workspaceRoot}/examples/ast/3-sql-lex/dist/**/*.js"],
+      "cwd": "${workspaceRoot}",
+      "sourceMaps": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Process",
+      "port": 5858,
+      "outFiles": [],
+      "sourceMaps": true
     }
   ]
 }

@@ -1,4 +1,4 @@
-import AnnotationPipe from './pipe/annotation-pipe';
+import * as AnnotationPipe from './pipe/annotation-pipe';
 import BlankPipe from './pipe/blank-pipe';
 import KeywordPipe from './pipe/keyword-pipe';
 import SymbolPipe from './pipe/symbol-pipe';
@@ -31,3 +31,7 @@ class Lex {
     }
   }
 }
+
+debugger;
+console.log('123123');
+new Lex().parse('select * from abc');
