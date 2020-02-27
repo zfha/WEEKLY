@@ -26,8 +26,8 @@ function compile(code) {
 }
 
 const code = `
-  function hello(){
-    console.log('bmatch');
+  function abdfdadf(){
+    console.log('world');
   }
 `;
 
