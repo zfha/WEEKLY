@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build": "webpack --mode development --config webpack.config.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
