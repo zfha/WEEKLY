@@ -4,12 +4,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch current file w/ ts-node",
-      "protocol": "inspector",
-      "args": ["${relativeFile}"],
-      "cwd": "${workspaceRoot}",
-      "runtimeArgs": ["-r", "ts-node/register"],
-      "internalConsoleOptions": "openOnSessionStart"
+      "name": "启动程序",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/interviews/manual-code/Promise/3-chain-then.js"
     }
   ]
 }
